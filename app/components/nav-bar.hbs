@@ -1,0 +1,8 @@
+<nav class="menu">
+  <h1>
+    <LinkTo @route="home">MichiWeather</LinkTo>
+  </h1>
+  {{#each this.routes as |route|}}
+    <LinkTo class="links" @route={{route.route}}>{{route.name}}</LinkTo>
+  {{/each}}
+</nav>
