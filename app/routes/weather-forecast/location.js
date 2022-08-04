@@ -9,6 +9,7 @@ export default class WeatherForecastLocationRoute extends Route {
 
   async model(params) {
     this.loader.setLoading(true);
+
     const location = await this.store.findRecord(
       'location',
       params.location_id
