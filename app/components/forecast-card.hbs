@@ -1,0 +1,14 @@
+<div class="forecast-card-container">
+
+  <div class="date">
+    <label>{{format-date @data.date "DD/MM"}}</label>
+  </div>
+
+  <div class="forecast-card-section">
+    <img alt={{@data.dayPhrase}} src={{@data.dayIcon}} />
+    <label>Max.</label>
+    <label>{{@data.maxTemp}}</label>
+  </div>
+
+  <label>{{@data.dayPhrase}}</label>
+</div>

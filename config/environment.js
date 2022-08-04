@@ -3,6 +3,7 @@
 module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'ember-weather-forecast',
+    API_KEY: process.env.API_KEY,
     environment,
     rootURL: '/',
     locationType: 'history',

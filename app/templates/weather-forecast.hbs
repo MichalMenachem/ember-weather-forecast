@@ -1,15 +1,16 @@
 {{page-title "Weather Forecast"}}
 <div class="container-body">
 
-<h2 class="page-header">Weather Forecast</h2>
+  <h2 class="page-header">Weather Forecast</h2>
 
-  <form action="/action_page.php">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" value="John"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" value="Doe"><br><br>
-    <input type="submit" value="Submit">
-  </form>
+  <label for="location-id">Please enter a location ID: </label><br>
+  <input {{on "input" this.onLocationIdChange}} type="text" id="location-id" name="location-id">
+  <br/>
+  <button disabled={{if this.locationId false true}} type="button" {{on "click" this.submit}}>Submit</button>
+
+  {{#if this.loading}}
+    <label>Loading....</label>
+  {{/if}}
 </div>
 
 {{outlet}}
