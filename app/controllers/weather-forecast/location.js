@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import {service} from '@ember/service';
+import { service } from '@ember/service';
 
 export default class WeatherForecastLocationController extends Controller {
   @service loader;

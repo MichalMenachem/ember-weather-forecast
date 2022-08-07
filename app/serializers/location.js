@@ -3,20 +3,23 @@ import JSONAPISerializer from '@ember-data/serializer/json-api';
 const getWeatherIcon = (iconId) =>
   `/assets/images/weather-conditions/${iconId}.svg`;
 
-const fahrenheitToCelsius = (fahrenheit) =>
-  Math.round(((fahrenheit - 32) * 5) / 9);
-
 export default class LocationSerializer extends JSONAPISerializer {
-  normalizeResponse(store, primaryModelClass, payload, id, requestType) {
+  normalizeResponse(store, primaryModelClass, payload, id) {
+
+    console.log({payload})
     const dailyForecasts = payload.DailyForecasts.map((dailyForecast) => ({
       date: dailyForecast.Date,
       timestamp: dailyForecast.EpochDate,
-      minTemp: `${fahrenheitToCelsius(
-        dailyForecast.Temperature.Minimum.Value
-      )}°C`,
-      maxTemp: `${fahrenheitToCelsius(
-        dailyForecast.Temperature.Maximum.Value
-      )}°C`,
+      // minTemp: `${fahrenheitToCelsius(
+      //   dailyForecast.Temperature.Minimum.Value
+      // )}°C`,
+      minTemp: dailyForecast.Temperature.Minimum.Value,
+      minTempUnit: dailyForecast.Temperature.Minimum.Unit,
+      // maxTemp: `${fahrenheitToCelsius(
+      //   dailyForecast.Temperature.Maximum.Value
+      // )}°C`,
+      maxTemp: dailyForecast.Temperature.Maximum.Value,
+      maxTempUnit: dailyForecast.Temperature.Maximum.Unit,
       dayIcon: getWeatherIcon(dailyForecast.Day.Icon),
       dayPhrase: dailyForecast.Day.IconPhrase,
       nightIcon: getWeatherIcon(dailyForecast.Night.Icon),

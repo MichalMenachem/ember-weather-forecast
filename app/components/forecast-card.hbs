@@ -7,14 +7,14 @@
   <div class="forecast-card-section">
     <img alt={{@data.dayPhrase}} src={{@data.dayIcon}} />
     <label>Max.</label>
-    <label>{{@data.maxTemp}}</label>
+    <label>{{convert-temperature @data.maxTemp @data.maxTempUnit @targetUnit}}°{{@targetUnit}}</label>
     <label>{{@data.dayPhrase}}</label>
   </div>
 
   <div class="forecast-card-section">
     <img alt={{@data.nightPhrase}} src={{@data.nightIcon}} />
     <label>Min.</label>
-    <label>{{@data.minTemp}}</label>
+    <label>{{convert-temperature @data.minTemp @data.minTempUnit @targetUnit}}°{{@targetUnit}}</label>
     <label>{{@data.nightPhrase}}</label>
   </div>
 
