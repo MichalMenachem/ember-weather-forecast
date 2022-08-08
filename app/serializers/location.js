@@ -5,8 +5,7 @@ const getWeatherIcon = (iconId) =>
 
 export default class LocationSerializer extends JSONAPISerializer {
   normalizeResponse(store, primaryModelClass, payload, id) {
-
-    console.log({payload})
+    console.log({ payload });
     const dailyForecasts = payload.DailyForecasts.map((dailyForecast) => ({
       date: dailyForecast.Date,
       timestamp: dailyForecast.EpochDate,

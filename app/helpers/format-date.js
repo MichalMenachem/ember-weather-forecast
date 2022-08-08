@@ -1,8 +1,8 @@
 import { helper } from '@ember/component/helper';
 import moment from 'moment';
 
-export default helper(function formatDate(
-  [date, format = 'DD/MM/YYYY'] /*, named*/
-) {
+export function formatDate([date, format = 'DD/MM/YYYY']) {
   return moment(date).format(format);
-});
+}
+
+export default helper(formatDate);

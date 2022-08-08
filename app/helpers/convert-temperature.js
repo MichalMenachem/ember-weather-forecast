@@ -19,10 +19,8 @@ const CONVERTER = {
   },
 };
 
-export default helper(function convertTemperature([
-  temperature,
-  sourceUnit,
-  targetUnit,
-]) {
+export function convertTemperature([temperature, sourceUnit, targetUnit]) {
   return CONVERTER[sourceUnit](temperature, targetUnit);
-});
+}
+
+export default helper(convertTemperature);
