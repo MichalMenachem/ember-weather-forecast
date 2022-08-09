@@ -9,14 +9,8 @@ export default class LocationSerializer extends JSONAPISerializer {
     const dailyForecasts = payload.DailyForecasts.map((dailyForecast) => ({
       date: dailyForecast.Date,
       timestamp: dailyForecast.EpochDate,
-      // minTemp: `${fahrenheitToCelsius(
-      //   dailyForecast.Temperature.Minimum.Value
-      // )}°C`,
       minTemp: dailyForecast.Temperature.Minimum.Value,
       minTempUnit: dailyForecast.Temperature.Minimum.Unit,
-      // maxTemp: `${fahrenheitToCelsius(
-      //   dailyForecast.Temperature.Maximum.Value
-      // )}°C`,
       maxTemp: dailyForecast.Temperature.Maximum.Value,
       maxTempUnit: dailyForecast.Temperature.Maximum.Unit,
       dayIcon: getWeatherIcon(dailyForecast.Day.Icon),
