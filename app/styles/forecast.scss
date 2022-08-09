@@ -1,0 +1,23 @@
+.daily-forecasts-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding-top: 3rem;
+
+  .forecast-card-container {
+    display: flex;
+    margin-bottom: 1rem;
+    height: 9rem;
+    background-color: #ccdfea;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 0.8rem;
+  }
+
+  .forecast-card-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}

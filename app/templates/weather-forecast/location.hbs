@@ -1,0 +1,13 @@
+{{page-title "Location"}}
+
+{{#if this.loading}}
+
+{{else}}
+  <div class="daily-forecasts-container">
+    {{#each @model.dailyForecasts as |dailyForecast|}}
+      <ForecastCard @data={{dailyForecast}} @targetUnit="C"/>
+    {{/each}}
+  </div>
+{{/if}}
+
+{{outlet}}

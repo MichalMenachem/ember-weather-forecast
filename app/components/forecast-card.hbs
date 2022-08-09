@@ -1,0 +1,21 @@
+<div class="forecast-card-container">
+
+  <div class="date">
+    <label>{{format-date @data.date "DD/MM"}}</label>
+  </div>
+
+  <div class="forecast-card-section">
+    <img alt={{@data.dayPhrase}} src={{@data.dayIcon}} />
+    <label>Max.</label>
+    <label>{{convert-temperature @data.maxTemp @data.maxTempUnit @targetUnit}}°{{@targetUnit}}</label>
+    <label>{{@data.dayPhrase}}</label>
+  </div>
+
+  <div class="forecast-card-section">
+    <img alt={{@data.nightPhrase}} src={{@data.nightIcon}} />
+    <label>Min.</label>
+    <label>{{convert-temperature @data.minTemp @data.minTempUnit @targetUnit}}°{{@targetUnit}}</label>
+    <label>{{@data.nightPhrase}}</label>
+  </div>
+
+</div>

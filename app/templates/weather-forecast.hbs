@@ -1,0 +1,18 @@
+{{page-title "Weather Forecast"}}
+<div class="container-body">
+
+  <h2 class="page-header">Weather Forecast</h2>
+
+  <label for="location-id">Please enter a location ID: </label>
+  <br/>
+  <input data-test-input {{on "input" this.onLocationIdChange}} type="text" id="location-id" name="location-id">
+  <br/>
+  <button data-test-button disabled={{if this.locationId false true}} type="button" {{on "click" this.submit}}>Submit
+  </button>
+
+  {{#if this.loading}}
+    <label class="loading" >Loading...</label>
+  {{/if}}
+</div>
+
+{{outlet}}
